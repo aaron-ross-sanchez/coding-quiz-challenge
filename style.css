@@ -118,7 +118,10 @@ a {
     font-size: 24px;
 } */
 
+.hide_middle {
+    display: none;
+}
 
-.hidden {
+.hide_end {
     display: none;
   }

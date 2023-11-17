@@ -12,9 +12,10 @@ let questionArea = document.getElementById("questions");
 let answers = document.getElementById("answers");
 let endSection = document.getElementById("end");
 let gameOver = document.getElementById("game-over");
-let finalScore = document.getElementById("final-score");
 let score = document.getElementById("score");
 let initials = document.getElementById("initials");
+let finalScore = document.getElementById("final-score");
+
 let textInput = document.getElementById("name");
 let submitBtn = document.getElementById("submit");
 
@@ -60,7 +61,7 @@ function startGame() {
 
     function showQuestions() {
         startSection.style.display = "none";
-        questionSection.style.display = "block";
+        questionSection.style.display = "flex";
     }
     setTimeout(showQuestions, );
 }
@@ -69,9 +70,12 @@ function showGameOver() {
     startSection.style.display = "none";
     questionSection.style.display = "none";
     timer.style.display = "none";
-    endSection.style.display = "flex";
-    endSection.style.flexDirection = "column";
-    gameOver.style.fontSize = "42px";
-    score.style.fontSize = "20px";
-    initials.style.padding = "20px";
+    endSection.classList.remove('hide_end');
+
+    // endSection.style.display = "flex";
+    // endSection.style.flexDirection = "column";
+    // gameOver.style.fontSize = "42px";
+    // score.style.fontSize = "20px";
+    // initials.style.padding = "20px";
+    // initials.style.fontSize = "20px";
 }
