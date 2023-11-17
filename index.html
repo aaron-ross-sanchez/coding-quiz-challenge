@@ -15,7 +15,7 @@
     <header id="header" class="header">
 
         <button id="high-score" class="high_score">
-            View High Scores
+            <a href="highscore.html">View High Scores</a>
         </button>
 
         <div id="timer" class="timer">
@@ -31,12 +31,12 @@
         <!--There are 4 different "settings" for the index.html file-->
         <!--This is the main section (section 1)-->
         
-        <div id="hidden start" class="start">
+        <div id="start" class="start">
             <div id="title" class="title">
                 <h1>Coding Quiz Challenge</h1>
             </div>
 
-            <div id="instruction" class="instructions">
+            <div id="instructions" class="instructions">
                 <p>Try to answer the following questions within the time limit! You will be able to enter your score at the end!</p>
             </div>
 
@@ -47,16 +47,16 @@
     <!--This is the question and answer section (section 2 and 3)-->
     <!--The program will run primarily here until the user goes through all the questions-->
 
-        <div id="quiz-questions" class="quiz_questions">
-            <div id="question" class="question"></div>
+        <div id="quiz-questions" class="hidden quiz_questions">
+            <div id="questions" class="questions"></div>
             <div id="answers" class="answers"></div>
         </div>
         
         
     <!--This is the game over section (section 4)-->
     <!--This section will take you to the highschore.html page once submitted-->
-        <div id="hidden end" class="end">
-            <h2>Game Over!</h2>
+        <div id="end" class="hidden end">
+            <h2 id="game-over" class="game_over">Game Over!</h2>
             <p>Your final score is: <span id="final-score" class="final_score">#</span></p>
             <p>Enter Initials: <input type="text" id="name" max="3"/>
                 <button id="submit" class="submit">Submit</button>
