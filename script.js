@@ -45,11 +45,7 @@ function startGame() {
         currentSection.style.display = "none";
         nextSection.style.display = "block";
     }
-
-    
-
     setTimeout(showQuestions, );
-
 }
 
 
