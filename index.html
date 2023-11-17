@@ -49,7 +49,7 @@
     <!--The program will run primarily here until the user goes through all the questions-->
 
         <div id="quiz-questions" class="hidden quiz_questions">
-            <div id="questions" class="questions"></div>
+            <div id="questions" class="questions">TEST</div>
             <div id="answers" class="answers"></div>
         </div>
         
@@ -57,10 +57,10 @@
     <!--This is the game over section (section 4)-->
     <!--This section will take you to the highschore.html page once submitted-->
         <div id="end" class="hidden end">
-            <h2 id="game-over" class="game_over">Game Over!</h2>
-            <p>Your final score is: <span id="final-score" class="final_score">#</span></p>
-            <p>Enter Initials: <input type="text" id="name" max="3"/>
-                <button id="submit" class="submit">Submit</button>
+            <h1 id="game-over" class="game_over">Game Over!</h1>
+            <p id="score" class="score">Your final score is: <span id="final-score" class="final_score">#</span></p>
+            <p id="initials" class="initials">Enter Initials: <input type="text" id="name" max="3"/>
+                <button id="submit" class="submit"><a href="highscore.html">Submit</a></button>
             </p>
         </div>
     </main>

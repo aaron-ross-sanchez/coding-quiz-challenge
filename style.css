@@ -93,9 +93,31 @@ a {
     display: none;
 }
 
-.end {
-    display: none;
+.game_over {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    width: 70%;
+    padding: 20px;
+    /* font-size: 42px; */
+    /* border: 2px solid black; */
 }
+
+.score {
+    display: inline;
+    border: 2px solid black;
+    padding: 20px;
+
+}
+/* .final_score {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    width: 60%;
+    padding: 20px;
+    font-size: 24px;
+} */
+
 
 .hidden {
     display: none;
