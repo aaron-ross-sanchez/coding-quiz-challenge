@@ -23,6 +23,7 @@ let countdownEnd = 0;
 let timeLeft = countdownStart;
 
 
+
 function startGame() {
     console.log("clicked");
 
