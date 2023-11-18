@@ -52,17 +52,45 @@ let currentQuestionIndex = 0;
 let questions = [
     //This is an object
     { 
-		prompt: `Inside which HTML 
-				element do we put 
-				the JavaScript?`, 
+		prompt: `Click C?`, 
 		options: [ 
-			"<javascript>", 
-			"<js>", 
-			"<script>", 
-			"<scripting>", 
+			"<A>", 
+			"<B>", 
+			"<C>", 
+			"<D>", 
 		], 
-		answer: "<script>", 
-	}//, include this when you add objects
+		answer: "<C>", 
+	}/*, 
+    {
+        prompt: `Click B?`,
+        options: [
+            "<A>", 
+			"<B>", 
+			"<C>", 
+			"<D>",
+        ],
+        answer: "<B>",
+    },
+    {
+        prompt: `Click D?`,
+        options: [
+            "<A>", 
+			"<B>", 
+			"<C>", 
+			"<D>",
+        ],
+        answer: "<D>",
+    },
+    {
+        prompt: `Click A?`,
+        options: [
+            "<A>", 
+			"<B>", 
+			"<C>", 
+			"<D>",
+        ],
+        answer: "<A>",
+    },*/
 ]
 
 //this declares the function questionArray
@@ -123,7 +151,7 @@ function startGame() {
 
     //variables defined for the if statement of the quiz timer
     let countdownInterval;
-    let timeLeft = 1;
+    let timeLeft = 10;
 
     //this redefines the value as countdownInterval to "repeatedly calls a function" "with a fixed time delay between each call"
     countdownInterval = setInterval(function () {
