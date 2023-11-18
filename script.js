@@ -94,6 +94,7 @@ function questionArray() {
         //variable a set to 0
         //the for loop will repeat until a is no longer less than the length of the options array of the objects in the questions array depending on the current index of the previous for loop
         //a will increase by 1 every time the for loop is completed
+        
         for (let a=0; a<questions[i].options.length; a++) {
             //creates a variable that will create a new list item every loop
             let optionItem = document.createElement("button");
@@ -122,7 +123,7 @@ function startGame() {
 
     //variables defined for the if statement of the quiz timer
     let countdownInterval;
-    let timeLeft = 59;
+    let timeLeft = 1;
 
     //this redefines the value as countdownInterval to "repeatedly calls a function" "with a fixed time delay between each call"
     countdownInterval = setInterval(function () {
