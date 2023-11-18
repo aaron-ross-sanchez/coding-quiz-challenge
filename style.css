@@ -187,4 +187,5 @@ input::placeholder {
 .endSection {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
