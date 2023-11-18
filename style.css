@@ -81,7 +81,6 @@ a {
     /* border: 2px solid black; */
 }
 
-
 .start-quiz {
     display: block;
     margin: 0 auto;
@@ -91,6 +90,34 @@ a {
 /*THIS IS FOR THE TWO OTHER SECTIONS THAT ARE CURRENTLY HIDDEN FROM VIEW*/
 .quiz_question {
     display: none;
+}
+
+.questionArray {
+    border: 2px solid blue;
+    padding: 20px;
+}
+
+.prompt {
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    font-size: 32px;
+
+}
+
+.optionsList {
+    border: 2px solid red;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.optionItem {
+    border: 2px solid green;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
 }
 
 .game_over {
@@ -124,4 +151,9 @@ a {
 
 .hide_end {
     display: none;
-  }
+}
+
+.endSection {
+    display: flex;
+    flex-direction: column;
+}

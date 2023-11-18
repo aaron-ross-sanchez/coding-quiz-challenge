@@ -82,20 +82,22 @@ function questionArray() {
         //This will add the prompt item in the question array to the new element that was created
         //The i variable was defined in the for loop
         prompt.textContent = questions[i].prompt;
+        prompt.classList.add("prompt")
         //This will add the prompt to the questionDiv, making it the div's child
         questionDiv.appendChild(prompt);
 
         //creates a new element ul for every object in questions
         let optionsList = document.createElement("ul");
         //this creates a class for the new ul element
-        // optionsList.classList.add("optionsList");
+        optionsList.classList.add("optionsList");
         //now I need to create a for loop to create the needed amount of li for the ul
         //variable a set to 0
         //the for loop will repeat until a is no longer less than the length of the options array of the objects in the questions array depending on the current index of the previous for loop
         //a will increase by 1 every time the for loop is completed
         for (let a=0; a<questions[i].options.length; a++) {
             //creates a variable that will create a new list item every loop
-            let optionItem = document.createElement("li");
+            let optionItem = document.createElement("button");
+            optionItem.classList.add("optionItem")
             //this will add the current item in the option array that the for loop is on, as well as the current item in the questions array that the previous for loop is running
             optionItem.textContent = questions[i].options[a];
             //this will add each list item to the unordered list created before this
@@ -140,7 +142,7 @@ function startGame() {
 
     function showQuestions() {
         startSection.style.display = "none";
-        questionSection.style.display = "block";
+        questionSection.classList.remove("hide_middle");
         questionArray();
     }
     setTimeout(showQuestions, 0);
@@ -150,5 +152,6 @@ function showGameOver() {
     startSection.style.display = "none";
     questionSection.style.display = "none";
     timer.style.display = "none";
+    endSection.classList.remove(".hide_end");
     endSection.classList.add("endSection");
 }
