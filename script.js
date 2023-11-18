@@ -156,3 +156,7 @@ function showGameOver() {
     endSection.classList.remove(".hide_end");
     endSection.classList.add("endSection");
 }
+
+textInput.addEventListener("click",function() {
+    this.placeholder = "";
+});
