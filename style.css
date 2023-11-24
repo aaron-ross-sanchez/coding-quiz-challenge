@@ -1,7 +1,7 @@
 :root {
     --back-color: #F7EFE5;
     --button-color: #C3ACD0;
-    --button-outline: #7743DB;
+    --button-outline: #7743DB; 
 }
 
 * {
@@ -121,6 +121,39 @@ a {
     font-size: 20px;
 }
 
+.containerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: 2px solid purple;
+}
+
+.feedback {
+    border: 2px solid maroon;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.nextButton {
+    margin: 10px;
+    font-size: 20px;
+}
+
+.divider {
+    border-bottom: 5px solid var(--button-outline);
+    border-radius: 10px;
+}
+
+.explanation {
+    border: 2px solid tomato;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
 .game_over {
     display: block;
     margin: 30px auto;
@@ -188,4 +221,29 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.highscore_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid chartreuse;
+}
+
+.highscores {
+    font-size: 36px;
+    border: 2px solid black;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+}
+
+.scoreElement {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid var(--button-color);
+    border-radius: 25px;
+    font-size: 20px;
 }

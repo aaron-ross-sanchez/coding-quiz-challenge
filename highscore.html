@@ -23,4 +23,26 @@
 
     </header>
 
+    <main>
+        <div class="highscore_container">
+
+      
+        <div class="highscores">High Scores</div>
+        <div id="displayArea"></div>
+
+        </div>
+
+        <script>
+            const storedScores = JSON.parse(localStorage.getItem("scores")) || [];
+            storedScores.sort((a, b) => b.score - a.score);
+            const displayArea = document.getElementById("displayArea");
+            storedScores.forEach((score, index) => {
+                const scoreElement = document.createElement("div");
+                scoreElement.classList.add("scoreElement");
+                scoreElement.textContent = `#${index + 1}: Score - ${score.score}, Initials - ${score.initials}`;
+                displayArea.appendChild(scoreElement);
+            });
+        </script>
+    </main>
+
 </body>
