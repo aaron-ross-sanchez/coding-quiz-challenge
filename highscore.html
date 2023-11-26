@@ -29,8 +29,11 @@
       
         <div class="highscores">High Scores</div>
         <div id="displayArea"></div>
+        
 
         </div>
+
+        <div id="buttons"></div>
 
         <script>
             const storedScores = JSON.parse(localStorage.getItem("scores")) || [];
@@ -42,6 +45,25 @@
                 scoreElement.textContent = `#${index + 1}: Score - ${score.score}, Initials - ${score.initials}`;
                 displayArea.appendChild(scoreElement);
             });
+
+            const buttons = document.getElementById("buttons");
+            let buttonDiv = document.createElement("div");
+            buttonDiv.classList.add("buttonDiv");
+
+            let playAgain = document.createElement("button");
+            playAgain.classList.add("playAgain");
+            playAgain.textContent = "Play Again!";
+
+            let clearScores = document.createElement("button");
+            clearScores.classList.add("clearScores");
+            clearScores.textContent = "Clear High Scores";
+
+            buttonDiv.appendChild(playAgain);
+            buttonDiv.appendChild(clearScores);
+
+            buttons.appendChild(buttonDiv);
+
+
         </script>
     </main>
 
