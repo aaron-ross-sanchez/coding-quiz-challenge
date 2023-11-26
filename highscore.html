@@ -33,7 +33,7 @@
 
         </div>
 
-        <div id="buttons"></div>
+        <div id="buttons" class="buttons"></div>
 
         <script>
             const storedScores = JSON.parse(localStorage.getItem("scores")) || [];
@@ -46,18 +46,35 @@
                 displayArea.appendChild(scoreElement);
             });
 
-            const buttons = document.getElementById("buttons");
+            let buttons = document.getElementById("buttons");
+            
             let buttonDiv = document.createElement("div");
             buttonDiv.classList.add("buttonDiv");
 
             let playAgain = document.createElement("button");
             playAgain.classList.add("playAgain");
             playAgain.textContent = "Play Again!";
+            playAgain.addEventListener("click", function() {
+                console.log("playAgain");
+                window.location.href = "index.html?runFunction=true";
+            });
 
             let clearScores = document.createElement("button");
             clearScores.classList.add("clearScores");
             clearScores.textContent = "Clear High Scores";
+            clearScores.addEventListener("click", function() {
+                localStorage.clear();
+                erase();
+            })
 
+            function erase() {
+                const displayArea = document.getElementById('displayArea');
+                while (displayArea.firstChild) {
+                    displayArea.removeChild(displayArea.firstChild);
+                }
+
+            }
+            
             buttonDiv.appendChild(playAgain);
             buttonDiv.appendChild(clearScores);
 

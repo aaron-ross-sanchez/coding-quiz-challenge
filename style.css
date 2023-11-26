@@ -247,3 +247,21 @@ input::placeholder {
     border-radius: 25px;
     font-size: 20px;
 }
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playAgain {
+    font-size: 20px;
+    margin: 30px;
+    padding: 10px;
+}
+
+.clearScores {
+    font-size: 20px;
+    margin: 30px;
+    padding: 10px;
+}

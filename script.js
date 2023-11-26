@@ -292,3 +292,8 @@ submitBtn.addEventListener("click", function () {
     localStorage.setItem("scores", JSON.stringify(existingScores));
     window.location.href = "highscore.html";
 });
+
+var urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('runFunction')) {
+    startGame();
+}
