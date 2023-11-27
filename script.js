@@ -42,7 +42,7 @@ let answers = document.getElementById("answers");
 startBtn.addEventListener("click", startGame);
 
 //Variables defined for a consistent countdown
-let countdownStart = 60;
+let countdownStart = 59;
 let countdownEnd = 0;
 let timeLeft = countdownStart;
 
@@ -51,155 +51,148 @@ let timeLeft = countdownStart;
 let questions = [
     //This is an object
     { 
-		prompt: `Click C?`, 
+		prompt: `Which tag is used to define an unordered list in HTML?`, 
 		options: [ 
-			"<A>", 
-			"<B>", 
-			"<C>", 
-			"<D>", 
+			"<ol>", 
+			"<li>", 
+			"<ul>", 
+			"<unordered>", 
 		], 
-		answer: "<C>", 
-        review: "This is where the explanation of the concept will go",
+		answer: "<ul>", 
+        review: "<ul> is used to create unordered lists in HTML. <ol> is used to create ordered lists, while <li> creates list items for either list type.",
 	}, 
     {
-        prompt: `Click B?`,
+        prompt: `Which CSS property is used to change the text color of an element?`,
         options: [
-            "<A>", 
-			"<B>", 
-			"<C>", 
-			"<D>",
+            "color", 
+			"text-color", 
+			"font-color", 
+			"style-color",
         ],
-        answer: "<B>",
-        review: "This is where the explanation of the concept will go",
+        answer: "color",
+        review: "The color property is used to change the text color. The other 'properties' are not real.",
     },
     {
-        prompt: `Click D?`,
+        prompt: `Which keyword is used to declare a variable in JavaScript?`,
         options: [
-            "<A>", 
-			"<B>", 
-			"<C>", 
-			"<D>",
+            "let", 
+			"var", 
+			"const", 
+			"All of the Above",
         ],
-        answer: "<D>",
-        review: "This is where the explanation of the concept will go",
+        answer: "All of the Above",
+        review: "Let, var, and const all declare variables in JavaScript",
     },
     {
-        prompt: `Click A?`,
+        prompt: `Which operator is used for a strict equality comparison in JavaScript?`,
         options: [
-            "<A>", 
-			"<B>", 
-			"<C>", 
-			"<D>",
+            "=", 
+			"!==", 
+			"===", 
+			"==",
         ],
-        answer: "<A>",
-        review: "This is where the explanation of the concept will go",
+        answer: "===",
+        review: "=== checks both the value and type equality, whicle == just checks value.",
+    },
+    {
+        prompt: `What does HTML stand for?`,
+        options: [
+            "Hyper Text Markup Language", 
+			"Hyper Typography Marks Lots", 
+			"Higher Type Markup Language", 
+			"Hyper Text Modify Language",
+        ],
+        answer: "Hyper Text Markup Language",
+        review: "HTML stands for Hyper Text Markup Language",
     }
 ]
 
-//this declares the function questionArray
-//this needs to be called in the third line of showQuestions() 
-//function questionArray() {
-    //this creates a for loop to go through all of the questions in that array
-    //defines i variable as 0, will loop as long as i is less than the length of the question array, variable i will increase by 1 every loop
-    //for (let i=0; i<questions.length; i++) {
-        //this is the code that will be looped
-        //creates a new element div for every object in questions
-        //let questionDiv = document.createElement("div");
-        //this creates a class for the new div element
-        //questionDiv.classList.add("questionArray");
-
-        //creates a new element p for every object in questions
-        //let prompt = document.createElement("p");
-        //This will add the prompt item in the question array to the new element that was created
-        //The i variable was defined in the for loop
-        //prompt.textContent = questions[i].prompt;
-        //prompt.classList.add("prompt")
-        //This will add the prompt to the questionDiv, making it the div's child
-        //questionDiv.appendChild(prompt);
-
-        //creates a new element ul for every object in questions
-        //let optionsList = document.createElement("ul");
-        //this creates a class for the new ul element
-        //optionsList.classList.add("optionsList");
-        //now I need to create a for loop to create the needed amount of li for the ul
-        //variable a set to 0
-        //the for loop will repeat until a is no longer less than the length of the options array of the objects in the questions array depending on the current index of the previous for loop
-        //a will increase by 1 every time the for loop is completed
-        
-        //for (let a=0; a<questions[i].options.length; a++) {
-            //creates a variable that will create a new list item every loop
-            //let optionItem = document.createElement("button");
-            //optionItem.classList.add("optionItem")
-            //this will add the current item in the option array that the for loop is on, as well as the current item in the questions array that the previous for loop is running
-            //optionItem.textContent = questions[i].options[a];
-            //this will add each list item to the unordered list created before this
-            //optionsList.appendChild(optionItem);
-            //the for loop will end when the length of the options array is reached
-        //}
-        //this adds the options list to the questionDiv element that was created at the beginning of the for loop
-        //this changes every question
-        //questionDiv.appendChild(optionsList);
-
-        //this adds the questionDiv to the previously defined questionArea at the start of the document
-        //questionArea.appendChild(questionDiv);
-    //}
-//}
-
+//This sets the first question to appear to be the first one
 let currentQuestionIndex = 0;
 
+//This function is in the checkAnswer() and startGame()
 function displayQuestion() {
+    //this will initially clear the questionArea that was defined at the beginning of the file
     questionArea.innerHTML = '';
 
+    //Creates a div called questionDiv
     let questionDiv = document.createElement("div");
+    //Adds a class to questionDiv
     questionDiv.classList.add("questionArray");
 
+    //Creates a paragraph elemenent called prompt
     let prompt = document.createElement("p");
+    //This replaces the initial value of prompt with the value from the prompt variable in the question objects, depending on the question it is on.
     prompt.textContent = questions[currentQuestionIndex].prompt;
     prompt.classList.add("prompt");
+    //This makes prompt a child of questionDiv
     questionDiv.appendChild(prompt);
 
+    //Creates an unordered list called optionsList
     let optionsList = document.createElement("ul");
     optionsList.classList.add("optionsList");
 
+    //This is a forEach loop that will create multiple optionItem's depending on if the program looped through all of the options in the question array
     questions[currentQuestionIndex].options.forEach(option => {
+        //This makes every optionItem a button
         let optionItem = document.createElement("button");
         optionItem.classList.add("optionItem");
+        //This replaces tbhe optionItems with the actual options from the question array
         optionItem.textContent = option;
+        //This will run the function checkAnswer once an optionItem is clicked. It will check if the option selected is correct (true)
         optionItem.addEventListener("click", function() {
             checkAnswer(option);
         });
         optionsList.appendChild(optionItem);
     });
 
+    //This makes optionsList a child of questionDiv
     questionDiv.appendChild(optionsList);
+    //This makes questionDiv a child of questionArea
     questionArea.appendChild(questionDiv);
 }
 
+//This is the checkAnswer function, and the value option that was run through the function during the event listener wil be the value selected answer
 function checkAnswer(selectedAnswer) {
+    //defines the variable correctAnswer as the answer variable from the question array, and it will take into accound the currentQuestionIndex
     let correctAnswer = questions[currentQuestionIndex].answer;
+    
+    //Creates new element and class, a div called containerDiv
     let containerDiv = document.createElement("div");
     containerDiv.classList.add("containerDiv");
 
+    //Creates new element and class, a div called feedback
     let feedback = document.createElement("div");
     feedback.classList.add("feedback");
 
+    //Creates new element and class, a button called nextButton
     let nextButton = document.createElement("button");
     nextButton.classList.add("nextButton");
 
+    //Creates new element and class, a div called divider
     let divider = document.createElement("div");
     divider.classList.add("divider");
 
+    //Creates new element and class, a div called explanation
     let explanation = document.createElement("div");
     explanation.classList.add("explanation");
 
+    //conditional statement.
+    //If the selectedAnswer is the correctAnswer
     if (selectedAnswer === correctAnswer) {
+        //the feedback will say "Correct!"
         feedback.textContent = "Correct!";
+        //the review variable from the questions array objects will be printed in the explanation div
         explanation.textContent = questions[currentQuestionIndex].review;
+        //10 seconds/points will be added to the time/score
         timeLeft += 10;
+        //this was a test for myself to make sure the funciton worked
         console.log("Correct!");
+    // else this will happen
     } else {
         feedback.textContent = "Incorrect!";
         explanation.textContent = questions[currentQuestionIndex].review;
+        //10 seconds/points will be reduced from the time/score
         timeLeft -= 10;
         console.log("Incorrect");
     }
@@ -273,14 +266,6 @@ function showGameOver() {
 
 textInput.addEventListener("click",function() {
     this.placeholder = "";
-    // if (document.addEventListener("click", function(){
-    //     console.log("THIS IS WORKING")
-    // }){
-    //     this.placeholder = "Enter Text Here";
-    // } else {
-
-    // }
-    // )
 });
 
 submitBtn.addEventListener("click", function () {
